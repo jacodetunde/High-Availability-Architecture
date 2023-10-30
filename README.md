@@ -341,7 +341,7 @@ In this runbook, we will implement the PHP Mailing deployment with multi-tier ar
     - Click `CREATE BUCKET`
 
 - Navigate to the GitHub Project Repository, Download the project App Stack and Upload it to the Bucket
-    - Click Here: https://github.com/awanmbandi/aws-real-world-projects
+    - Click Here: https://github.com/jacodetunde/High-Availability-Architecture.git
         - Make sure you're on `four-tier-mailing-app-project` branch
         - Click on the `ZIP file` name: `app-db-configs.zip`
         - Click `View Raw` or `Download` to download the application configs to your local
@@ -380,7 +380,7 @@ In this runbook, we will implement the PHP Mailing deployment with multi-tier ar
 
 ### STEP 9.3: `Login to your Bastion Host` and `Remote into the Appserver` to `Configure` the Environment
 1. Once you lock into the `Bastion`, Execute the Following commands to setup `SSH Agent Port Fowarding`
-2. Login to your `Prod-Appserver` using SSH Port Fowarding and Execute the following ccommands https://github.com/awanmbandi/aws-real-world-projects/blob/four-tier-mailing-app-project/appservers-startup-script/app-automation.sh
+2. Login to your `Prod-Appserver` using SSH Port Fowarding and Execute the following ccommands https://github.com/jacodetunde/High-Availability-Architecture/blob/main/appservers-startup-scripts/app-automation.sh
 
 ### 1. Setup SSH Port Forwarding Between Your Local and Bastion Host To Point at The Web, App and DB Instance.
 ```exec ssh-agent bash``` 
@@ -424,8 +424,8 @@ Now run the above command to check added identities or Private keys
             - IAM instance profile: Select `EC2-AmazonS3ReadOnlyAccess` IAM Role
             - Auto-assign public IP: `ENABLE`
             - Auto-assign public IP: `ENABLE`
-            - `NOTE:` Make sure to update the LoadBalancer DNS `BACKEND_LOAD_BALANCER_DNS` in https://github.com/awanmbandi/aws-real-world-projects/blob/three-tier-mailing-app-project/webserver-reverse-proxy-config/000-default.conf `before passing the below User Data`
-            - User data: provide the user data in https://github.com/awanmbandi/aws-real-world-projects/blob/three-tier-mailing-app-project/webserver-reverse-proxy-config/web-automation.sh
+            - `NOTE:` Make sure to update the LoadBalancer DNS `BACKEND_LOAD_BALANCER_DNS` in https://github.com/jacodetunde/High-Availability-Architecture/blob/main/webservers-reverse-proxy-config/000-default.conf `before passing the below User Data`
+            - User data: provide the user data in https://github.com/jacodetunde/High-Availability-Architecture/blob/main/webservers-reverse-proxy-config/web-automation.sh
             - `NOTE:` Update the `webserver-reverse-proxy-config/000-default.conf` on GitHub before passing User Data
 
             - Click on `Create launch template`
@@ -445,8 +445,8 @@ Now run the above command to check added identities or Private keys
         
         - Expand `Advance details`
             - IAM instance profile: Select `EC2-AmazonS3ReadOnlyAccess` IAM Role
-            - `NOTE:` Make sure to update the Database Configurations in https://github.com/awanmbandi/aws-real-world-projects/blob/main/appserver-database-config/wp-config.php with Yours, `before passing the below User Data`
-            - User data: provide the user data in https://github.com/awanmbandi/aws-real-world-projects/blob/main/appserver-startup-script/app-automation.sh
+            <!-- - `NOTE:` Make sure to update the Database Configurations in https://github.com/awanmbandi/aws-real-world-projects/blob/main/appserver-database-config/wp-config.php with Yours, `before passing the below User Data` -->
+            - User data: provide the user data in https://github.com/jacodetunde/High-Availability-Architecture/blob/main/appservers-startup-scripts/app-automation.sh
             - `NOTE:` Update the Database Configuration file `main/appserver-database-config/wp-config.php` on GitHub before passing the User Data
             - Once changes have been made and user data passed 
             - Click on `Create launch template`
